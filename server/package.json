@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon node -r dotenv/config app.js",
+    "test": "npm run test"
+  },
+  "keywords": [
+    "Node.js",
+    "Express.js",
+    "knex.js",
+    "PostgreSQL",
+    "Docker"
+  ],
+  "author": "Zoya Bezoyan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "knex": "^1.0.2",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
