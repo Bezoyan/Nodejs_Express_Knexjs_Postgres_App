@@ -7,8 +7,11 @@ class ArticleService {
     }
 
     getArticles() {
-        const data = articleDAO.getArticles();
-        return data;
+        return articleDAO.getArticles();
+    }
+
+    getArticle(articleId) {
+        return articleDAO.getArticle(articleId);
     }
 }
 

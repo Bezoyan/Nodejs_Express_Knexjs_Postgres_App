@@ -18,6 +18,15 @@ class ArticleController {
             res.status(404).json('Not found');
         }
     }
+
+    async getArticles(req, res) {
+        try {
+            const [article] = await articleService.getArticle(req.params.id);
+            res.status(200).json(article);
+        } catch (err) {
+            res.status(404).json('No such artice with this id');
+        }
+    }
 }
 
 module.exports = new ArticleController;

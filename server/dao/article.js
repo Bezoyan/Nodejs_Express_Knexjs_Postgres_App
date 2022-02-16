@@ -17,6 +17,13 @@ class ArticleDAO {
         const articles = await dbConnection('articles');
         return articles;
     }
+
+    async getArticle(articleId) {
+        const article = await dbConnection.select('*')
+            .from('articles')
+            .where('id', '=', articleId);
+        return article;
+    }
 }
 
 module.exports = new ArticleDAO();
