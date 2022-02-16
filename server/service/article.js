@@ -6,8 +6,8 @@ class ArticleService {
         return articleDAO.createArticle(heading, content);
     }
 
-    getArticles() {
-        return articleDAO.getArticles();
+    getAllArticles() {
+        return articleDAO.getAllArticles();
     }
 
     getArticle(articleId) {

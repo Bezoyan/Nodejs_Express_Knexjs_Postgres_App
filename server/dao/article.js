@@ -13,7 +13,7 @@ class ArticleDAO {
         return newArticle;
     }
 
-    async getArticles() {
+    async getAllArticles() {
         const articles = await dbConnection('articles');
         return articles;
     }

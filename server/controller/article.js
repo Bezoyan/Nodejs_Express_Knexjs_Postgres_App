@@ -10,16 +10,16 @@ class ArticleController {
         }
     }
 
-    async getArticles(req, res) {
+    async getAllArticles(req, res) {
         try {
-            const articles = await articleService.getArticles(res);
-            res.status(200).json({articles});
+            const articles = await articleService.getAllArticles(res);
+            res.status(200).json(articles);
         } catch (err) {
             res.status(404).json('Not found');
         }
     }
 
-    async getArticles(req, res) {
+    async getArticle(req, res) {
         try {
             const [article] = await articleService.getArticle(req.params.id);
             res.status(200).json(article);
