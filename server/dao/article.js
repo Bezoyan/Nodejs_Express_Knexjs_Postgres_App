@@ -2,7 +2,7 @@ const dbConnection =  require('../db/db');
 
 class ArticleDAO {
     async createArticle(heading, content) {
-        const [newArticle] = await  await dbConnection('articles')
+        const [newArticle] = await dbConnection('articles')
             .insert({
                 heading: heading,
                 content: content,
@@ -11,6 +11,11 @@ class ArticleDAO {
             })
             .returning('*');
         return newArticle;
+    }
+
+    async getArticles() {
+        const articles = await dbConnection('articles');
+        return articles;
     }
 }
 

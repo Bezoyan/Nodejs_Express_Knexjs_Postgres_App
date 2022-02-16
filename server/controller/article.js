@@ -9,6 +9,15 @@ class ArticleController {
             res.status(500).json('Something went wrong');
         }
     }
+
+    async getArticles(req, res) {
+        try {
+            const articles = await articleService.getArticles(res);
+            res.status(200).json({articles});
+        } catch (err) {
+            res.status(404).json('Not found');
+        }
+    }
 }
 
 module.exports = new ArticleController;
