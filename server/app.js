@@ -1,14 +1,26 @@
 const express = require('express');
+const bodyParser = require('body-parser')
+
+const config = require('./configs/index');
+const router = require('./routes');
+
+//initialize knex
+//const knex = require('knex')(knexConfig[process.env.NODE_ENV])
+
+
 const app = express();
 
-const articleRouter = require('./routes/articles');
-const port   = require('./configs/config');
 
-app.use('/', articleRouter);
+app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+// parse application/json
+app.use(bodyParser.json())
 
-app.listen(port, () => {
-    console.log(`Running on PORT ${port}`)
+app.use(router);
+
+// app.use(express.urlencoded({ extended: false }));
+// app.use(express.json());
+
+app.listen(config.port, () => {
+    console.log(`Running on PORT ${config.port}`)
 });

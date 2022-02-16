@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon node -r dotenv/config app.js",
-    "test": "npm run test"
+    "test": "npm run test",
+    "migrate": "knex migrate:latest --knexfile db/knexfile.js"
   },
   "keywords": [
     "Node.js",
@@ -17,8 +18,10 @@
   "author": "Zoya Bezoyan",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.1",
     "express": "^4.17.2",
     "knex": "^1.0.2",
+    "path": "^0.12.7",
     "pg": "^8.7.3"
   },
   "devDependencies": {
