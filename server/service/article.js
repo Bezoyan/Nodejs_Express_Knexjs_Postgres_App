@@ -19,7 +19,6 @@ class ArticleService {
     }
 
     updateArticle(articleId, updateArticle) {
-        console.log(updateArticle);
         return articleDAO.updateArticle(articleId, updateArticle);
     }
 }

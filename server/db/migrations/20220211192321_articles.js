@@ -7,8 +7,8 @@ exports.up = function(knex) {
         table.increments('id').primary()
         table.string('heading', 255).notNullable().defaultTo('Untitled article')
         table.string('content', 10000).notNullable()
-        table.timestamp('created_at').notNullable().defaultTo(knex.fn.now())
-        table.timestamp('updated_at').notNullable().defaultTo(knex.fn.now())
+        table.timestamp('created_at').nullable().defaultTo(knex.fn.now())
+        table.timestamp('updated_at').nullable().defaultTo(knex.fn.now())
       })
 };
 
