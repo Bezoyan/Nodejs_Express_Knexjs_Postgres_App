@@ -49,6 +49,6 @@ app.use(function(req, res, next) {
     });
   });
 
-app.listen(config.port, () => {
+  module.exports = app.listen(config.port, () => {
     console.log(`Running on PORT ${config.port}`)
 });
