@@ -7,7 +7,6 @@ class ArticleController {
         try {
             const newArticle = await articleService.createArticle(req.body);
             res.status(HttpStatus.CREATED).json(newArticle);
-            console.log(res);
         } catch (err) {
             return res.status(HttpStatus.INTERNAL_SERVER_ERROR);
         }
