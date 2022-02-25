@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon node -r dotenv/config app.js",
     "test": "npm run test",
-    "migrate": "knex migrate:latest --knexfile db/knexfile.js"
+    "migrate": "knex migrate:latest --knexfile db/knexfile.js",
+    "seed": "knex seed:run --knexfile db/knexfile.js"
   },
   "keywords": [
     "Node.js",
