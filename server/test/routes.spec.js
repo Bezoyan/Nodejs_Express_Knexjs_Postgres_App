@@ -55,7 +55,7 @@ describe('API Routes', function() {
     describe('PUT /article/:id', function() {
         it('should update an article', function(done) {
             chai.request(server)
-                .put('/article/2')
+                .put('/article/31')
                 .send({
                   heading: 'updated value2',
                   content: 'updated content2'
@@ -80,7 +80,7 @@ describe('API Routes', function() {
     describe('DELETE /article/:id', function() {
         it('should delete an article', function(done) {
             chai.request(server)
-                .delete('/article/29')
+                .delete('/article/32')
                 .end(function(err, res) {
                     res.should.have.status(200);
                     res.should.be.json; // jshint ignore:line

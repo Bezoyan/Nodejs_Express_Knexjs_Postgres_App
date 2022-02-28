@@ -1,3 +1,6 @@
+const dotenv = require('dotenv');
+
+
 module.exports = {
   development: {
     client: 'pg',
@@ -9,10 +12,26 @@ module.exports = {
       database: process.env.DB_READ_DATABASE
     },
     migrations: {
-      directory: './server/db/migrations'
+      directory: './migrations'
     },
     seeds: {
-      directory: './server/db/seeds'
+      directory: './seeds'
+    }
+  },
+  test: {
+    client: 'pg',
+    connection: {
+      host: process.env.TEST_DB_READ_HOST,
+      port: process.env.TEST_DB_READ_PORT,
+      user: process.env.TEST_DB_READ_USERNAME,
+      password: process.env.TEST_DB_READ_PASSWORD,
+      database: process.env.TEST_DB_READ_DATABASE
+    },
+    migrations: {
+      directory: './migrations'
+    },
+    seeds: {
+      directory: './seeds'
     }
   }
 }
